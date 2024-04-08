@@ -49,3 +49,19 @@ function sum(nums){
 //normal case
     return nums[0] + sum(nums.slice(1));
 }
+
+/* 
+what is happening step by step
+
+sum ([3,4,5])
+    3 + sum([4,5])
+        4 + sum([5])
+            5 + sum([])
+                0 --------once it reaches 0, then base case is satisfied and returns 0 then WORKS BACKWARDS
+            5+0 = 5
+        4+5 = 9
+    3+9= 12
+
+    returns 12 the last call which is also the original call
+
+*/
